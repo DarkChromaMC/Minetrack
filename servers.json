@@ -3,5 +3,20 @@
     "name": "CatCraft",
     "ip": "play.catcraft.net",
     "type": "PC"
+  },
+  {
+    "name": "Blue Realm",
+    "ip": "23.139.82.46:25566",
+    "type": "PC"
+  },
+  {
+    "name": "Red Realm",
+    "ip": "23.139.82.46:25564",
+    "type": "PC"
+  },
+  {
+    "name": "Green Realm",
+    "ip": "23.139.82.46:25567",
+    "type": "PC"
   }
 ]
