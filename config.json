@@ -1,12 +1,12 @@
 {
-  "listen_port": process.env.PORT || 8080,
+  "listen_port": 8080,
   "site_name": "CatCraft Tracker",
   "theme": "default",
   "enable_web_console": false,
   "servers": [
     {
       "name": "CatCraft",
-      "ip": "play.catcraft.net"
+      "ip": "mc.catcraft.net"
     }
   ]
 }
