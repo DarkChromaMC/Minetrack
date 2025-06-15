@@ -22,10 +22,13 @@ RUN npm install --build-from-source \
  && npm run build
 
 # run as non root
+# Create user, create /data dir for volume, set up symlink, and set permissions
 RUN addgroup --gid 10043 --system minetrack \
  && adduser  --uid 10042 --system --ingroup minetrack --no-create-home --gecos "" minetrack \
+ && mkdir -p /data \
  && ln -s /data/database.sql /usr/src/minetrack/database.sql \
  && chown -R minetrack:minetrack /usr/src/minetrack /data
+
 USER minetrack
 
 EXPOSE 8080
