@@ -24,6 +24,7 @@ RUN npm install --build-from-source \
 # run as non root
 RUN addgroup --gid 10043 --system minetrack \
  && adduser  --uid 10042 --system --ingroup minetrack --no-create-home --gecos "" minetrack \
+ && ln -s /data/database.sql /usr/src/minetrack/database.sql \ # <--- ADD THIS LINE
  && chown -R minetrack:minetrack /usr/src/minetrack
 USER minetrack
 
