@@ -21,16 +21,24 @@ COPY . .
 RUN npm install --build-from-source \
  && npm run build
 
+# Copy the new entrypoint script and make it executable
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 # run as non root
-# Create user, create /data dir for volume, set up symlink, and set permissions
+# Create user, create /data dir for volume, and set up symlink
 RUN addgroup --gid 10043 --system minetrack \
  && adduser  --uid 10042 --system --ingroup minetrack --no-create-home --gecos "" minetrack \
  && mkdir -p /data \
  && ln -s /data/database.sql /usr/src/minetrack/database.sql \
- && chown -R minetrack:minetrack /usr/src/minetrack /data
+ && chown -R minetrack:minetrack /usr/src/minetrack
 
 USER minetrack
 
 EXPOSE 8080
 
-ENTRYPOINT ["/sbin/tini", "--", "node", "main.js"]
+# Use the new script as the entrypoint
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+# The script will execute this command after setting permissions
+CMD ["/sbin/tini", "--", "node", "main.js"]
