@@ -1,12 +1,12 @@
 {
-  "listen_port": process.env.PORT || 3000,
-  "site_name": "CatCraft Live Playercount",
+  "listen_port": 8080,
+  "site_name": "CatCraft Tracker",
   "theme": "default",
   "enable_web_console": false,
   "servers": [
     {
       "name": "CatCraft",
-      "ip": "mc.catcraft.net"
+      "ip": "play.catcraft.net"
     }
   ]
 }
