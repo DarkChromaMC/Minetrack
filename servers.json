@@ -22,10 +22,4 @@
     "port": 25567,
     "type": "PC"
   },
-  {
-    "name": "Bedrock Server",
-    "ip": "23.139.82.46",
-    "port": 19132,
-    "type": "PC"
-  }
 ]
