@@ -1,6 +1,6 @@
 [
   {
-    "name": "CatCraft",
+    "name": "CatCraft Network",
     "ip": "play.catcraft.net",
     "type": "PC"
   },
@@ -20,6 +20,12 @@
     "name": "Green Realm",
     "ip": "23.139.82.46",
     "port": 25567,
+    "type": "PC"
+  },
+  {
+    "name": "Bedrock Server",
+    "ip": "23.139.82.46",
+    "port": 19132,
     "type": "PC"
   }
 ]
